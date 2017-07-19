@@ -7,6 +7,7 @@
  */
 package com.jingtang.start;
 
+
 /**
  * @ClassName: AbstractGameBootService
  * @Description: 游戏服务启动和停止抽象类
@@ -75,6 +76,8 @@ public abstract class AbstractGameBootService {
 
 	public AbstractGameBootService(String[] args) {
 		this.args = args;
+		// 设置shutdown hook
+		Runtime.getRuntime().addShutdownHook(new ShutdownThread(this));
 	}
 
 	/**

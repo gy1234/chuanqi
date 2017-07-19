@@ -23,6 +23,8 @@ public class GameStart {
 	 * @throws
 	 */
 	public static void main(String[] args) {
+		AbstractGameBootService gameBootService = new GameBootService(args);
+		gameBootService.start();
 	}
 
 }
